@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy Policy for Champions Dex on Windows (Microsoft Store)." />
+  <title>Privacy Policy - Champions Dex (Windows)</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f4ef;
+      --ink: #1f1a14;
+      --muted: #5c5348;
+      --card: #fffdf9;
+      --border: #ddd4c6;
+      --accent: #2f6fed;
+      --ok: #1f6b3a;
+      --warn: #8a5a00;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14110e;
+        --ink: #f4eee4;
+        --muted: #b7aa98;
+        --card: #1d1914;
+        --border: #3a3228;
+        --accent: #7aa6ff;
+        --ok: #7dcea0;
+        --warn: #e0b35a;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    main {
+      max-width: 46rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    h1 { font-size: 1.85rem; line-height: 1.25; margin: 0 0 0.5rem; }
+    h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; }
+    h3 { font-size: 1.05rem; margin: 1.4rem 0 0.5rem; }
+    p, li { color: var(--ink); }
+    .meta, .muted { color: var(--muted); }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin: 1rem 0;
+    }
+    .ok { color: var(--ok); }
+    .warn { color: var(--warn); }
+    ul { padding-left: 1.25rem; }
+    a { color: var(--accent); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.92em;
+      word-break: break-all;
+    }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="meta"><strong>Champions Dex</strong> (Windows desktop, Microsoft Store)</p>
+    <p class="meta">Effective date: 5 November 2026</p>
+
+    <div class="card">
+      <p><strong>Unofficial fan app.</strong> Champions Dex is an independent companion for Pokemon Champions planning. It is <strong>not</strong> affiliated with, endorsed by, or sponsored by Nintendo, The Pokemon Company, Game Freak, or Creatures Inc.</p>
+    </div>
+
+    <p>This page describes how the <strong>Windows desktop</strong> build of Champions Dex ("the app", "we") handles information. It is written for the Microsoft Store product. Mobile (Android / iOS) builds may include additional features; those mobile-only features are marked below as <strong>not applicable</strong> to this Windows Store build.</p>
+
+    <h2>Summary</h2>
+    <ul>
+      <li><span class="ok">No account or sign-in</span> is required or offered in the Windows Store build.</li>
+      <li><span class="ok">Teams, Pokemon Builder builds, match logs, settings, and cached reference data stay on your PC</span> by default.</li>
+      <li>The app may <strong>download public reference JSON and artwork</strong> over HTTPS and cache them locally so the app can work offline.</li>
+      <li><span class="ok">No ads</span> and no sale of personal data for advertising in this app.</li>
+      <li><span class="warn">Optional:</span> if you use <strong>Send feedback</strong>, you may type a message and an optional email. That content is sent to Formspree so the maintainer can read it.</li>
+      <li><span class="ok">Not in this Windows Store build:</span> AI Coach, in-app purchases / RevenueCat, screenshot OCR import, and Android battle overlay.</li>
+    </ul>
+
+    <h2>1. Information stored on your device</h2>
+    <p>The Windows app stores, among other things:</p>
+    <ul>
+      <li>Saved teams and related team-builder state (local database such as Hive), including local identifiers (UUIDs).</li>
+      <li>Saved Pokemon Builder builds (single-Pokemon loadouts) in Hive, also keyed by local UUIDs.</li>
+      <li>Match logger entries (format, participating teams or build snapshots, results, notes) for your personal history inside the app.</li>
+      <li>App settings and preferences (for example SharedPreferences), including theme and an optional backup export folder path when you choose a folder for desktop backups.</li>
+      <li>Cached copies of public reference files (Pokemon, moves, items, abilities, image manifest) and cached images (for example sprites) so the app can work offline after the first download.</li>
+    </ul>
+    <p>Uninstalling the app removes application sandbox data on your PC, subject to how Windows handles backups and residual files. Files you exported (for example JSON backups in a folder you picked) remain under your control outside the app sandbox.</p>
+
+    <h2>2. Network services used by the Windows build</h2>
+
+    <h3>2.1 Game reference data and artwork</h3>
+    <p>To obtain and update Pokedex, move, item, and related reference data, the app requests static files over HTTPS from public hosts, including:</p>
+    <ul>
+      <li><code>https://raw.githubusercontent.com/cycalo/Pokemon-Champions-Serribi-Scraper/main/data/</code></li>
+      <li><code>https://raw.githubusercontent.com/cycalo/Pokemon-Champions-Serribi-Scraper/main/images/</code></li>
+    </ul>
+    <p>The upstream project documents that it mirrors Serebii.net material for Pokemon Champions. The GitHub repository path retains a misspelling ("Serribi") in the slug only; the URLs above are the live endpoints.</p>
+    <p>Supplementary Pokemon artwork may also be requested from <code>https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/imagesHQ/</code> and, for some mappings, <code>raw.githubusercontent.com/PokeAPI/sprites</code>. Those are ordinary image GETs, not account sign-ins.</p>
+    <p>GitHub and other hosts will see standard connection metadata that any HTTPS host would see (such as IP address and TLS metadata) while delivering the file. The app does not send your team names, notes, match logs, or saved rosters to those repositories as part of normal reference downloads.</p>
+    <p>You can delete cached JSON reference files from Settings using Clear cache and refresh data. Image caches may retain sprites until cleared by the system or the app's image cache.</p>
+
+    <h3>2.2 Google Fonts</h3>
+    <p>The app may use the <code>google_fonts</code> package for typography. Depending on platform behavior and cache state, font files may be downloaded from Google font endpoints over HTTPS. Those requests are not used for in-app advertising or cross-app tracking. See Google's own policies for how Google handles those requests.</p>
+
+    <h3>2.3 Optional feedback (Formspree)</h3>
+    <p>Settings includes an optional <strong>Send feedback</strong> action. If you use it, you can voluntarily send:</p>
+    <ul>
+      <li>a category (idea, bug, or other),</li>
+      <li>a message you type,</li>
+      <li>an <strong>optional email</strong> so we can reply,</li>
+      <li>and the app version (no other device identifiers are intentionally attached by that form).</li>
+    </ul>
+    <p>That content is submitted over HTTPS to <a href="https://formspree.io/">Formspree</a> (form endpoint configured in the app) and delivered to the maintainer's notification email. Do not include sensitive personal data you do not want transmitted to Formspree and the maintainer. See Formspree's privacy documentation for how they process submissions.</p>
+    <p>If you never use Send feedback, this path does not send that content.</p>
+
+    <h3>2.4 Optional public announcements</h3>
+    <p>If a given Windows build is compiled with Supabase URL and anon key dart-defines, the app may fetch <strong>public developer announcement</strong> rows (title, body, optional https link, timestamps) over HTTPS. No account is required for that read. The app does not send your teams, match logs, or saved rosters as part of that request. The last successful list and unread badge state may be stored locally. Builds compiled without those defines do not use this path.</p>
+
+    <h3>2.5 Optional crash reporting (Sentry)</h3>
+    <p>Some release builds may be compiled with a Sentry DSN. In those builds only, uncaught errors and limited performance traces may be reported to Sentry. Default builds distributed without that flag do not send telemetry to Sentry. Diagnostic reports can include technical context such as app version, device type, operating system version, and stack traces. They are not intended to collect free-text personal identifiers you type into the app.</p>
+
+    <h3>2.6 Backup, restore, share, and Pokepaste import</h3>
+    <p>On Windows you may pick a folder once, then Create backup writes JSON files of your saved teams and Pokemon Builder builds there. Match logs are not included in that backup format.</p>
+    <p>If you use Share or export features, content is passed to the destination app you choose. We do not control how those third-party apps process data.</p>
+    <p>Pokepaste import lets you paste Showdown-style team text. Parsing happens on your device against the local reference dataset. Pasted content is not transmitted to Champions Dex-operated servers as part of that feature path.</p>
+
+    <h2>3. Features not included in this Windows Store build</h2>
+    <p>The following appear in the broader ChampionsDex project or mobile apps, but are <strong>not applicable</strong> to the Windows Microsoft Store build described on this page:</p>
+    <ul>
+      <li><strong>AI Coach</strong> (Z.AI / GLM prompts, tool calls, and related traffic) - not shipped in this Windows Store product.</li>
+      <li><strong>Purchases, credits, RevenueCat, Google Play Billing, Apple IAP, and account linking</strong> - not used in this Windows Store build. There is no in-app purchase flow for AI Coach credits here.</li>
+      <li><strong>Screenshot OCR team import</strong> (gallery screenshots + on-device ML Kit) - unavailable on desktop; the app shows that the feature is mobile-only.</li>
+      <li><strong>Android battle overlay</strong> (display over other apps / foreground service) - Android only; not present on Windows.</li>
+      <li><strong>Mandatory or optional sign-in</strong> for core use - not offered in this Windows Store build.</li>
+    </ul>
+
+    <h2>4. What we do not do (by design)</h2>
+    <ul>
+      <li>No behavioral advertising or ad mediation SDKs in the described dependency set for this product.</li>
+      <li>No requirement to provide your name, email, phone number, or contacts. An email is optional only if you choose to include one on the feedback form.</li>
+      <li>No collection of precise location for advertising.</li>
+      <li>No use of advertising ID for profiling inside this app's own code paths described above.</li>
+    </ul>
+
+    <h2>5. Children's privacy</h2>
+    <p>Champions Dex is a companion tool for planning teams in a video game. If you are a parent or guardian and have questions about your child's use of the app, please review this policy together with them. If you believe we should remove project-side content tied to a support channel you control, contact us using the details below.</p>
+
+    <h2>6. Your choices</h2>
+    <ul>
+      <li><strong>Export or delete device data:</strong> clear cache in Settings, delete teams in-app, remove exported backup files you created, or uninstall the app.</li>
+      <li><strong>Feedback:</strong> do not use Send feedback if you do not want a message (or optional email) sent via Formspree.</li>
+      <li><strong>Regional rights:</strong> depending on where you live, privacy laws may give you additional rights regarding personal data.</li>
+    </ul>
+
+    <h2>7. International users</h2>
+    <p>If you use the app outside the country where the maintainer resides, information that travels over the network (for example reference downloads, optional Formspree feedback, optional announcements, or optional Sentry reports when enabled) may be processed according to this policy and the practices of those infrastructure providers.</p>
+
+    <h2>8. Changes to this policy</h2>
+    <p>We may update this policy from time to time. The effective date at the top will change when we do. Material changes will be reflected on this page and, when practical, in the in-app Privacy Policy text when the app is updated.</p>
+
+    <h2>9. Contact</h2>
+    <p>For questions about this Privacy Policy for the Windows desktop app:</p>
+    <ul>
+      <li>Email: <a href="mailto:michaelbig054@gmail.com">michaelbig054@gmail.com</a></li>
+    </ul>
+
+    <footer>
+      <p>This document is provided for convenience and transparency. It is not legal advice. Have qualified counsel review store disclosures if you publish under a company name or in regulated jurisdictions.</p>
+      <p>Related project materials may also live in the Champions Blueprint documentation tree. This HTML page is the Windows Store-facing version.</p>
+    </footer>
+  </main>
+</body>
+</html>
